@@ -1,0 +1,44 @@
+[
+  // Disable ctrl+j default interaction
+  {
+    "key": "ctrl+j",
+    "command": "-workbench.action.togglePanel"
+  },
+  {
+    "key": "ctrl+;",
+    "command": "editor.action.commentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+/",
+    "command": "-editor.action.commentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+'",
+    "command": "workbench.action.terminal.new"
+  },
+  {
+    "key": "ctrl+shift+n ctrl+shift+m",
+    "command": "workbench.explorer.openEditorsView.toggleVisibility"
+  },
+
+  // Move to first editor group from File Explorer
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.focusFirstEditorGroup",
+    "when": "openEditorsFocus || filesExplorerFocus"
+  },
+  // From Open Editors to File Explorer
+  {
+      "key": "ctrl+j",
+      "command": "workbench.explorer.fileView.focus",
+      "when": "openEditorsFocus"
+  },
+  // From File Explorer to Open Editors
+  {
+      "key": "ctrl+k",
+      "command": "workbench.files.action.focusOpenEditorsView",
+      "when": "filesExplorerFocus"
+  },
+]
