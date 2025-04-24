@@ -1,44 +1,527 @@
-[
-  // Disable ctrl+j default interaction
-  {
-    "key": "ctrl+j",
-    "command": "-workbench.action.togglePanel"
+{
+  //// Vim-mode configurations
+  // General configurations
+  "vim.leader": "<space>",
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.smartRelativeLine": true,
+  "vim.replaceWithRegister": true,
+  // Insert Mode Keybindings
+  "vim.insertModeKeyBindings": [
+    {
+      "before": [
+        "j",
+        "j"
+      ],
+      "after": [
+        "<Esc>"
+      ]
+    },
+  ],
+  // Visual mode keybindings Non recursive
+  "vim.visualModeKeyBindingsNonRecursive": [
+    // Moving text around
+    {
+      "before": [
+        "<C-l>"
+      ],
+      "commands": [
+        "editor.action.indentLines"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "<C-h>"
+      ],
+      "commands": [
+        "editor.action.outdentLines"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "<C-j>"
+      ],
+      "commands": [
+        "editor.action.moveLinesDownAction"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "<C-k>"
+      ],
+      "commands": [
+        "editor.action.moveLinesUpAction"
+      ],
+      "silent": true
+    },
+  ],
+  // Normal mode keybindings Non recursive
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "<leader>",
+        "f",
+        "f"
+      ],
+      "commands": [
+        "workbench.action.quickOpen"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "f",
+        "c"
+      ],
+      "commands": [
+        "workbench.action.showCommands"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "f",
+        "d"
+      ],
+      "commands": [
+        "editor.action.formatDocument"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "c",
+        "a"
+      ],
+      "commands": [
+        "notifications.clearAll"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "a"
+      ],
+      "commands": [
+        "editor.action.quickFix"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "s"
+      ],
+      "commands": [
+        "workbench.action.toggleSidebarVisibility"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "S"
+      ],
+      "commands": [
+        "workbench.action.toggleAuxiliaryBar"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "d"
+      ],
+      "after": [
+        "d",
+        "d"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "<C-n>"
+      ],
+      "commands": [
+        ":nohl"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "leader",
+        "w"
+      ],
+      "commands": [
+        "workbench.action.files.save"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "K"
+      ],
+      "commands": [
+        "lineBreakInsert"
+      ],
+      "silent": true
+    },
+    // Movimentação entre buffers
+    {
+      "before": [
+        "<C-h>"
+      ],
+      "after": [
+        "<C-w>",
+        "h"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "<C-j>"
+      ],
+      "after": [
+        "<C-w>",
+        "j"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "<C-k>"
+      ],
+      "after": [
+        "<C-w>",
+        "k"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "<C-l>"
+      ],
+      "after": [
+        "<C-w>",
+        "l"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "<leader>",
+        "q"
+      ],
+      "after": [
+        "<C-w>",
+        "q"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "<leader>",
+        "l"
+      ],
+      "commands": [
+        ":bnext"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "<leader>",
+        "h"
+      ],
+      "commands": [
+        ":bprevious"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "<leader>",
+        "w",
+        "k"
+      ],
+      "commands": [
+        ":vs"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "<leader>",
+        "w",
+        "j"
+      ],
+      "commands": [
+        ":sp"
+      ],
+      "silent": true
+    },
+    // Harpoon
+    {
+      "before": [
+        "<leader>",
+        "h",
+        "a"
+      ],
+      "commands": [
+        "vscode-harpoon.addEditor"
+      ],
+      "when": "editorTextFocus && vim.active"
+    },
+    {
+      "before": [
+        "<leader>",
+        "h",
+        "o"
+      ],
+      "commands": [
+        "vscode-harpoon.editorQuickPick"
+      ],
+      "when": "editorTextFocus && vim.active"
+    },
+    {
+      "before": [
+        "<leader>",
+        "h",
+        "e"
+      ],
+      "commands": [
+        "vscode-harpoon.editEditors"
+      ],
+      "when": "editorTextFocus && vim.active"
+    },
+    {
+      "before": [
+        "<leader>",
+        "h",
+        "1"
+      ],
+      "commands": [
+        "vscode-harpoon.gotoEditor1"
+      ],
+      "when": "editorTextFocus && vim.active"
+    },
+    {
+      "before": [
+        "<leader>",
+        "h",
+        "2"
+      ],
+      "commands": [
+        "vscode-harpoon.gotoEditor2"
+      ],
+      "when": "editorTextFocus && vim.active"
+    },
+    {
+      "before": [
+        "<leader>",
+        "h",
+        "3"
+      ],
+      "commands": [
+        "vscode-harpoon.gotoEditor3"
+      ],
+      "when": "editorTextFocus && vim.active"
+    },
+    {
+      "before": [
+        "<leader>",
+        "h",
+        "4"
+      ],
+      "commands": [
+        "vscode-harpoon.gotoEditor4"
+      ],
+      "when": "editorTextFocus && vim.active"
+    },
+    {
+      "before": [
+        "<leader>",
+        "h",
+        "5"
+      ],
+      "commands": [
+        "vscode-harpoon.gotoEditor5"
+      ],
+      "when": "editorTextFocus && vim.active"
+    },
+    {
+      "before": [
+        "<leader>",
+        "h",
+        "6"
+      ],
+      "commands": [
+        "vscode-harpoon.gotoEditor6"
+      ],
+      "when": "editorTextFocus && vim.active"
+    },
+    {
+      "before": [
+        "<leader>",
+        "h",
+        "7"
+      ],
+      "commands": [
+        "vscode-harpoon.gotoEditor7"
+      ],
+      "when": "editorTextFocus && vim.active"
+    },
+    {
+      "before": [
+        "<leader>",
+        "h",
+        "8"
+      ],
+      "commands": [
+        "vscode-harpoon.gotoEditor8"
+      ],
+      "when": "editorTextFocus && vim.active"
+    },
+    {
+      "before": [
+        "<leader>",
+        "h",
+        "9"
+      ],
+      "commands": [
+        "vscode-harpoon.gotoEditor9"
+      ],
+      "when": "editorTextFocus && vim.active"
+    },
+    // Project Manager extension
+    {
+      "before": [
+        "<leader>",
+        "p",
+        "a"
+      ],
+      "commands": [
+        "projectManager.saveProject"
+      ],
+      "when": "editorTextFocus && vim.active"
+    },
+    {
+      "before": [
+        "<leader>",
+        "p",
+        "o"
+      ],
+      "commands": [
+        "projectManager.listProjectsNewWindow"
+      ],
+      "when": "editorTextFocus && vim.active"
+    },
+    {
+      "before": [
+        "<leader>",
+        "p",
+        "e"
+      ],
+      "commands": [
+        "projectManager.editProjects"
+      ],
+      "when": "editorTextFocus && vim.active"
+    }
+  ],
+  // Keybindings handled to vs code
+  "vim.handleKeys": {
+    "<C-a>": false, // Select all text
+    "<C-b>": false, // Toggle sidebar
+    "<C-e>": false, // Toggle file search
+    "<C-f>": false // Search word
   },
-  {
-    "key": "ctrl+;",
-    "command": "editor.action.commentLine",
-    "when": "editorTextFocus && !editorReadonly"
+  // Yank highlighting
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.color": "rgba(250, 250, 250)",
+  "vim.highlightedyank.textColor": "rgba(0, 0, 0)",
+  // Others
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
   },
-  {
-    "key": "ctrl+/",
-    "command": "-editor.action.commentLine",
-    "when": "editorTextFocus && !editorReadonly"
+  //// Vscode configuration
+  // User config
+  "window.newWindowProfile": "Default",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.activityBar.location": "hidden",
+  "workbench.editor.showTabs": "single",
+  "breadcrumbs.enabled": false,
+  "workbench.startupEditor": "none",
+  "editor.minimap.enabled": false,
+  "material-icon-theme.hidesExplorerArrows": true,
+  "workbench.tree.enableStickyScroll": false,
+  "workbench.tree.renderIndentGuides": "none",
+  "explorer.compactFolders": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  "git.decorations.enabled": false,
+  "explorer.decorations.badges": false,
+  "window.customTitleBarVisibility": "never",
+  "window.titleBarStyle": "native",
+  "custom-ui-style.electron": {
+    "titleBarStyle": "hiddenInset"
   },
-  {
-    "key": "ctrl+'",
-    "command": "workbench.action.terminal.new"
+  "custom-ui-style.stylesheet": {
+    ".notification-toast": "box-shadow: none !important",
+    ".quick-input-widget.show-file-icons": "box-shadow: none !important",
+    ".quick-input-widget": "top: 25vh !important",
+    ".quick-input-list .scrollbar": "display: none",
+    ".monaco-action-bar.quick-input-inline-action-bar": "display: none",
+    ".editor-widget.find-widget": "box-shadow: none; border-radius: 4px",
+    ".quick-input-titlebar": "background: #100B15 !important",
+    ".monaco-workbench .part.editor > .content .editor-group-container > .title.title-border-bottom:after": "display: none",
+    ".monaco-scrollable-element > .shadow.top": "display: none",
+    ".sidebar .title-label": "padding: 0 !important",
+    ".sidebar": "border: none !important",
+    ".monaco-workbench .monaco-list:not(.element-focused):focus:before": "outline: none !important",
+    ".monaco-editor .scroll-decoration": "display: none",
+    ".title-actions": "display: none !important",
+    ".title.show-file-icons .label-container .monaco-icon-label.file-icon": "justify-content: center; padding: 0 !important",
+    ".title .monaco-icon-label:after": "margin-right: 0",
+    ".monaco-workbench .part.editor > .content .editor-group-container > .title > .label-container > .title-label": "padding-left: 60px",
+    ".title .monaco-icon-label.file-icon": "margin: 0 60px",
   },
-  {
-    "key": "ctrl+shift+n ctrl+shift+m",
-    "command": "workbench.explorer.openEditorsView.toggleVisibility"
+  "custom-ui-style.font.sansSerif": "JetbrainsMono Nerd Font",
+  "workbench.colorCustomizations": {
+    "editorCursor.background": "#000",
   },
-
-  // Move to first editor group from File Explorer
-  {
-    "key": "ctrl+l",
-    "command": "workbench.action.focusFirstEditorGroup",
-    "when": "openEditorsFocus || filesExplorerFocus"
+  "editor.fontFamily": "JetbrainsMono Nerd Font Light",
+  "editor.fontLigatures": true,
+  "editor.lineHeight": 1.8,
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "comment",
+        "settings": {
+          "fontStyle": "italic"
+        }
+      }
+    ]
   },
-  // From Open Editors to File Explorer
-  {
-      "key": "ctrl+j",
-      "command": "workbench.explorer.fileView.focus",
-      "when": "openEditorsFocus"
+  "editor.lightbulb.enabled": "off",
+  "editor.hover.enabled": false,
+  "files.trimTrailingWhitespace": true,
+  "editor.lineNumbers": "relative",
+  "files.insertFinalNewline": true,
+  "editor.suggestOnTriggerCharacters": false,
+  "editor.tabCompletion": "on",
+  "editor.snippetSuggestions": "top",
+  "editor.tabSize": 4,
+  "editor.renderLineHighlight": "none",
+  "editor.occurrencesHighlight": "off",
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.includeLanguages": {
+    "asp": "html"
   },
-  // From File Explorer to Open Editors
-  {
-      "key": "ctrl+k",
-      "command": "workbench.files.action.focusOpenEditorsView",
-      "when": "filesExplorerFocus"
-  },
-]
+  "files.autoSave": "afterDelay",
+  "window.menuBarVisibility": "toggle",
+  "workbench.colorTheme": "Anysphere+ (Dark)",
+  // Usage config
+}
