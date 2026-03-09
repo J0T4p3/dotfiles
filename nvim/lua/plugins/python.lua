@@ -1,5 +1,16 @@
 return {
   {
+    {
+      "neovim/nvim-lspconfig",
+      opts = {
+        servers = {
+          pyright = {},
+          ty = { enabled = false },
+        },
+      },
+    },
+  },
+  {
     "linux-cultist/venv-selector.nvim",
     opts = {
       settings = {
